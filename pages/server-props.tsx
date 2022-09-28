@@ -1,6 +1,5 @@
 
 import type { NextPage } from 'next'
-import { useQueries, useQuery } from 'react-query';
 import { coinDeskResponse } from '../types';
 
 export async function getServerSideProps() {

@@ -2,14 +2,12 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import Link from 'next/link'
 import { useEffect } from 'react'
 import { queryClient } from './_app'
 
 const Home: NextPage = () => {
-
   useEffect(() => {
-    queryClient.prefetchQuery('apiEntries', () => fetch('https://api.publicapis.org/entries'))
+    queryClient.prefetchQuery('test', () => fetch('/api/hello').then(res => { return res.json() }));
   }, []);
 
   return (
@@ -24,6 +22,8 @@ const Home: NextPage = () => {
         <h1 className={styles.title}>
           Welcome to Crypto Shipto
         </h1>
+        <br />
+        <span>{process.env.NEXT_PUBLIC_FUN_FACT}</span>
 
         <p className={styles.description}>
           Visit any one our neat pages and discover the power of Next.JS !
@@ -39,6 +39,11 @@ const Home: NextPage = () => {
           <a href="/static-props" className={styles.card}>
             <h2>Staticly Generated Props with API data</h2>
             <p>Fun fact - you are awesome!</p>
+          </a>
+
+          <a href="/prefetched-data" className={styles.card}>
+            <h2>Prefetched Data with react-query</h2>
+            <p>Fun fact - Your body heals itself!</p>
           </a>
 
         </div>

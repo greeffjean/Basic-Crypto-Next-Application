@@ -2,7 +2,7 @@ import type { NextPage } from 'next'
 import { funCatFactResponse } from '../types';
 
 export async function getStaticProps() {
-    const data = await fetch('https://catfact.ninja/fact').then((response) => { return response.json()});
+    const data = await fetch(`${process.env.CAT_API}`).then((response) => { return response.json()});
     return {
         props: {
             data

@@ -1,4 +1,4 @@
-type entriesType = {
+export type entriesType = {
   API: string;
   Description: string;
   Auth: string;
