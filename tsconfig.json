@@ -1,7 +1,12 @@
+
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -13,8 +18,60 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true
+    "incremental": true,
+    "baseUrl": "./src",
+    "paths": {
+      "atoms": [
+        "components/atoms"
+      ],
+      "molecules": [
+        "components/molecules"
+      ],
+      "organisms": [
+        "components/organisms"
+      ],
+      "layouts": [
+        "components/layouts"
+      ],
+      "templates": [
+        "components/templates"
+      ],
+      "icon-components": [
+        "components/atoms/icons"
+      ],
+      "icon-images": [
+        "../public/icons"
+      ],
+      "images": [
+        "../public/images"
+      ],
+      "hooks": [
+        "hooks"
+      ],
+      "types/*": [
+        "types/*"
+      ],
+      "services/*": [
+        "services/*"
+      ],
+      "core": [
+        "core"
+      ],
+      "contexts": [
+        "contexts"
+      ],
+      "utils": [
+        "utils"
+      ]
+    }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
+
